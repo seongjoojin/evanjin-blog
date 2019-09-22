@@ -6,7 +6,7 @@ category: development
 
 ## Visual Studio Code 추천 확장프로그램
 
-### 1. [Vue Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=changjoo-park.vscode-vue-devpack)
+### [Vue Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=changjoo-park.vscode-vue-devpack)
 
 처음 프론트 입문을 vue로 시작해서 IDE를 atom에서 vscode로 넘어오고 vue에 관한 확장프로그램을 찾다가 위의 것을 찾게되었고 지금도 잘 사용하고 있습니다.
 
