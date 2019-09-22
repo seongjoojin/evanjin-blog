@@ -98,6 +98,14 @@ https://velog.io/@velopert/eslint-and-prettier-in-react
 중괄호와 함께 indent는 프로그래머가 인식하기 어려운 존재중 하나입니다.
 이 indent가 제대로 되었는지와 식별하기 쉽게 색깔로 구분해 주는 확장프로그램입니다.
 
+### [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+
+sourcetree, fork, gitkraken 등의 깃 이력관리 프로그램을 쓰다가
+사실 제일 맘에 드는 것은 gitkraken이였지만
+private repo에 대해서 유료화 정책을 펴면서 뭐로 갈지 고민하다가
+완벽하게 다 대체되는 것은 아니지만 git의 이력에 대해서는 gui로 잘 그려주고
+파일도 바로 추적 가능해서 개인적으로는 맘에 들었던 확장프로그램입니다.
+
 ### [vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=jpoissonnier.vscode-styled-components)
 
 제가 리액트를 사용하면 가장 좋아하는 것이 styled-components였는데 딱하나 불편한 것이 자동완성이나 문법 강조가 잘 되지 않는 면이 있었습니다.
