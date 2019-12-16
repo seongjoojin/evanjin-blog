@@ -61,7 +61,7 @@ Java Spring boot, Kubernetes, Redux Saga
 _Nomadcorder_
 
 - Tech Stack: Node.js, Express.js, MongoDB, Mongoose, Pug, AWS S3, Heroku, Webpack, oAuth (Github, Facebook)
-- Teacher: [Nicolás](https://www.rocketpunch.com/@JohnnyKoo) [Serrano](https://github.com/serranoarevalo) [Arévalo](https://www.rocketpunch.com/@JohnnyKoo)(Nomadcorder)
+- Teacher: Nicolás Serrano Arévalo(Nomadcorder)
 
 — Nomadcorder에서 하는 full stack node.js 강의인 YouTube 클론을 수강하였습니다.
 
