@@ -71,6 +71,8 @@ http://cdimage.ubuntu.com/ubuntu-server/bionic/daily/current/
 지금 설치한 것을 master로 설정할 것이기 때문에 이름만 blabla-master로 해주시면 됩니다.
 이름 정하기 어려우시면 k8s-master도 무난해보입니다.
 
+우분투 18 lts 이하로는 아래의 방법으로 설정해주시면 됩니다.
+
 설치완료되고 재부팅 후에는 `/etc/network/interfaces`를 아래와 같이 수정해줍니다.
 
 ```
@@ -88,7 +90,7 @@ gateway 192.168.0.1
 dns-nameservers 1.1.1.1 8.8.8.8
 ```
 
-eth0의 경우 ifconfig를 통해서 이름이 제대로 되었는지 확인 후 다르다면 해당 이름으로 변경해주어야 합니다.
+eth0의 경우 `ls /sys/class/net` 명령어를 통해서 이름이 제대로 되었는지 확인 후 다르다면 해당 이름으로 변경해주어야 합니다.
 
 ifupdown 패키지를 설치 후 네트워크를 재시작 해주어 위의 설정을 적용해줍니다.
 
@@ -101,6 +103,40 @@ $ sudo /etc/init.d/networking restart
 ```
 
 위와 같이 설정 후에도 `ifconifg` 명령 실행시 192.168.0.10로 나오지 않는다면 재부팅 해주시면 적용됩니다.
+
+우분투 18 lts부터는 설정방식이 변경되어서 아래와 같이 진행해주시면 됩니다.
+
+먼저 interface 목록을 확인합니다.
+
+```shell
+$ ls /sys/class/net
+```
+
+확인 후 설정파일을 엽니다.
+
+```shell
+$ sudo nano /etc/netplan/50-cloud-init.yaml
+```
+
+위의 파일을 아래의 내용으로 채우고 저장합니다. 여기서 eth0은 interface 목록 확인한 것으로 변경해주시면 됩니다.
+
+```yaml
+network:
+  ethernets:
+    eth0:
+      addresses: [192.168.0.10/24]
+      gateway4: 192.168.0.1
+      nameservers:
+        addresses: [1.1.1.1, 8.8.8.8]
+      dhcp4: no
+  version: 2
+```
+
+위와 같이 설정 후 저장하고 설정을 반영합니다.
+
+```shell
+sudo netplan apply
+```
 
 ## 5. Kubernetes & Docker 설치 전 설정
 
@@ -227,6 +263,8 @@ hostnamectl set-hostname evanjin-node1
 
 다음으로 ip를 변경하여줍니다.
 `/etc/network/interfaces`에서 address 부분만 `192.168.0.11`로 변경해줍니다.
+
+만약 우분투 Lts 18이상이시라면 `/etc/netplan/50-cloud-init.yaml`에서 address 부분만 `192.168.0.11/24`로 변경해줍니다.
 
 재부팅 후 ip와 hostname이 제대로 변경되었는지 아래 명령어를 통해서 확인해줍니다.
 
