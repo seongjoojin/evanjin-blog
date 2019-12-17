@@ -180,7 +180,7 @@ $ sudo docker run hello-world
 Kubernetes가 권장하는 Docker 데몬 드라이버가 systemd이므로 Docker 데몬의 드라이버를 교체합니다.
 
 ```shell
-$ sudo cat > /etc/docker/daemon.json <<EOF
+$ cat > sudo /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
@@ -190,6 +190,9 @@ $ sudo cat > /etc/docker/daemon.json <<EOF
   "storage-driver": "overlay2"
 }
 EOF
+
+# 만약 위의 명령어에서 파일이 없다는 오류가 나면 아래의 명령어를 실행해주세요.
+$ sudo touch /etc/docker/daemon.json
 
 $ sudo mkdir -p /etc/systemd/system/docker.service.d
 
@@ -231,7 +234,7 @@ $ kubectl version
 마지막으로 계획하였던 master 노드와 worker 노도의 호스트 이름과 IP를 모두 등록해줍니다.
 
 ```shell
-$ cat << EOF >> /etc/hosts
+$ cat << EOF >> sudo /etc/hosts
 192.168.0.10 evanjin-master
 192.168.0.11 evanjin-node1
 192.168.0.12 evanjin-node2
@@ -258,13 +261,17 @@ MAC주소 정책을 모든 네트워크 어댑터의 새 MAC 주소 생성으로
 먼저 hostname을 변경해줍니다.
 
 ```shell
-hostnamectl set-hostname evanjin-node1
+sudo hostnamectl set-hostname evanjin-node1
 ```
 
 다음으로 ip를 변경하여줍니다.
 `/etc/network/interfaces`에서 address 부분만 `192.168.0.11`로 변경해줍니다.
 
-만약 우분투 Lts 18이상이시라면 `/etc/netplan/50-cloud-init.yaml`에서 address 부분만 `192.168.0.11/24`로 변경해줍니다.
+만약 우분투 Lts 18이상이시라면 `/etc/netplan/50-cloud-init.yaml`에서 address 부분만 `192.168.0.11/24`로 변경해주고 적용해주시면 됩니다.
+
+```shell
+sudo netplan apply
+```
 
 재부팅 후 ip와 hostname이 제대로 변경되었는지 아래 명령어를 통해서 확인해줍니다.
 
@@ -279,8 +286,10 @@ hostname는 제가 임의로 정한 것이므로 위에서 마스터 노드에�
 
 ## 9. master 노드 설정
 
+도커 및 쿠버네티스 실행
+
 ```shell
-$ sudo kubeadm init --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=192.168.0.10
+$ sudo kubeadm init --pod-network-cidr=20.96.0.0/12 --apiserver-advertise-address=192.168.0.10 --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers
 ```
 
 위의 명령어가 제대로 실행되게 되면 아래와 같이 나오게 됩니다.
