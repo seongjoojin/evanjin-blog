@@ -13,8 +13,7 @@ category: development
 homebrew를 이용하여서 virtualbox를 설치해보도록 하겠습니다.
 
 ```shell
-$ brew cask install virtualbox
-$ brew cask install virtualbox-extension-pack
+$ brew cask install virtualbox virtualbox-extension-pack
 ```
 
 ## 2. Ubuntu ISO 파일 다운로드
@@ -164,9 +163,6 @@ $ sudo apt-key fingerprint 0EBFCD88
 # 도커 다운로드 링크 추가
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
-# 패키지 관리 도구 업데이트
-$ sudo apt-get update
-
 # docker 설치
 $ sudo apt-get update && sudo apt-get install \
   containerd.io=1.2.10-3 \
@@ -289,7 +285,17 @@ hostname는 제가 임의로 정한 것이므로 위에서 마스터 노드에�
 도커 및 쿠버네티스 실행
 
 ```shell
-$ sudo kubeadm init --pod-network-cidr=20.96.0.0/12 --apiserver-advertise-address=192.168.0.10 --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers
+$ sudo systemctl daemon-reload
+
+$ sudo systemctl enable --now docker
+
+$ sudo systemctl enable --now kubelet
+```
+
+쿠버네티스 초기화 명령 실행
+
+```shell
+$ sudo kubeadm init --pod-network-cidr=20.96.0.0/12 --apiserver-advertise-address=192.168.0.10
 ```
 
 위의 명령어가 제대로 실행되게 되면 아래와 같이 나오게 됩니다.
@@ -324,6 +330,16 @@ $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
 ## 10. 워커 노드 설정
+
+도커 및 쿠버네티스 실행
+
+```shell
+$ sudo systemctl daemon-reload
+
+$ sudo systemctl enable --now docker
+
+$ sudo systemctl enable --now kubelet
+```
 
 워커 노드에서는 위에서 kubeadm join부터 나왔던 내용을 그대로 복사해서 붙여넣고 실행해줍니다.
 
