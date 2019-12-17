@@ -143,7 +143,7 @@ sudo netplan apply
 **스왑 메모리 비활성화**
 
 ```shell
-$ swapoff -a && sed -i '/ swap / s/^/#/' /etc/fstab
+$ sudo swapoff -a && sudo sed -i '/ swap / s/^/#/' /etc/fstab
 ```
 
 ## 6. Docker 설치
