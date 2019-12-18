@@ -373,6 +373,24 @@ evanjin-node2    NotReady   <none>   47s   v1.17.0
 kubernetes에서는 자체적인 Dashboard를 제공합니다.
 kubernetes의 전반적인 상태를 UI로 보기 쉽게 제공합니다.
 
+먼저 Calico 설치를 설치해줍니다.
+
+```shell
+$ curl -O https://docs.projectcalico.org/v3.9/manifests/calico.yaml
+
+$ sudo sed s/192.168.0.0\\/16/20.96.0.0\\/12/g -i calico.yaml
+
+$ sudo kubectl apply -f calico.yaml
+```
+
+calico와 coredns 관련 Pod의 Status가 Running인지 확인합니다.
+
+```shell
+$ sudo kubectl get pods --all-namespaces
+```
+
+이제 다음으로 대시보드를 설치해줍니다.
+
 마스터 노드에서 아래의 명령어를 실행해줍니다.
 
 ```shell
