@@ -296,6 +296,8 @@ $ sudo systemctl enable --now kubelet
 쿠버네티스 초기화 명령 실행
 
 ```shell
+$ sudo kubeadm reset
+
 $ sudo kubeadm init --pod-network-cidr=20.96.0.0/12 --apiserver-advertise-address=192.168.0.10
 ```
 
@@ -345,6 +347,8 @@ $ sudo systemctl enable --now kubelet
 워커 노드에서는 위에서 kubeadm join부터 나왔던 내용을 그대로 복사해서 붙여넣고 실행해줍니다.
 
 ```shell
+$ sudo kubeadm reset
+
 $ sudo kubeadm join 192.168.0.10:6443 --token ix2ak9.nkg5p2smfkdke7hu \
     --discovery-token-ca-cert-hash sha256:cc1138bbb9a51bfaaf268a217fc55adeb1e49b38f2d0ae449009cd2716047324
 ```
