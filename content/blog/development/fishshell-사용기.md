@@ -106,7 +106,7 @@ omf install slavic-cat
 
 설치 후 터미널 모습이 변한 것을 보실 수 있습니다.
 
-![slavic-cat.png](./images/slavic-cat.png)
+![slavic-cat.png](./images/fishshell_사용기/slavic-cat.png)
 
 slavic cat가 무사히 잘 적용된 모습입니다.
 

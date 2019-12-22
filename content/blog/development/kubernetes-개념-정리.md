@@ -6,7 +6,7 @@ category: development
 
 ### Pods
 
-![kubernetes_pod.png](./images/kubernetes_pod.png)
+![kubernetes_pod.png](./images/kubernetes-개념-정리/kubernetes_pod.png)
 
 - Pods는 Kubernetes 내부에서 컨테이너를 운영하는 기본 단위
 - Pod는 환경 변수를 설정하고, 스토리지를 마운트(mount)하고, 기타 정보를 컨테이너에 피드(feet)하는 방법을 제공
@@ -16,7 +16,7 @@ category: development
 
 ### ReplicaSets
 
-![kubernetes_ReplicaSets.png](./images/kubernetes_ReplicaSets.png)
+![kubernetes_ReplicaSets.png](./images/kubernetes-개념-정리/kubernetes_ReplicaSets.png)
 
 - ReplicaSets는 Kubernetes에서 **하위 레벨** 유형으로 간주
 - Kubernetes 사용자는 배포 및 DeamonSets와 같은 상위 레벨 추상화를 선택하는 경우가 많음
@@ -33,7 +33,7 @@ category: development
 
 ### Deployments
 
-![kubernetes_deployments.png](./images/kubernetes_deployments.png)
+![kubernetes_deployments.png](./images/kubernetes-개념-정리/kubernetes_deployments.png)
 
 - Deployments는 롤링 업데이트 및 롤백을 지원함
 - 롤아웃은 일시 중지될 수 있음

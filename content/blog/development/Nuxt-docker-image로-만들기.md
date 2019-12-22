@@ -118,7 +118,7 @@ ex) `docker run --name hello-nuxt -p 3000:3000 nuxt:0.0.1`
 
 이제 http://loaclhost:3000로 접속해보시면 nuxt 초기 페이지가 나오게 됩니다.
 
-![nuxt-dockerfile](./images/nuxt-dockerfile.png)
+![nuxt-dockerfile](./images/nuxt_docker_image로_만들기/nuxt-dockerfile.png)
 
 만약 이 상태에서 `docker stop <container-name>`를 치시면 docker container 구동이 멈추고 3000번 포트로 가시면 연결할 수 없다고 나오게 됩니다.
 

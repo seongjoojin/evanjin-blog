@@ -99,11 +99,11 @@ yarn run e2e
 npm run e2e
 ```
 
-![nuxt_cypress1.png](./images/nuxt_cypress1.png)
+![nuxt_cypress1.png](./images/nuxt_cypress_적용기/nuxt_cypress1.png)
 
 실행하시면 위와 같이 테스트 결과가 나오게 됩니다.
 
-![nuxt_cypress2.png](./images/nuxt_cypress2.png)
+![nuxt_cypress2.png](./images/nuxt_cypress_적용기/nuxt_cypress2.png)
 
 스크린샷을 보시다싶이 실행 후에 `cypress/videos` 안에 `cypress/integration` 폴더안에서 설정한 테스트들이 실행된 영상을 보실 수 있습니다.
 
@@ -120,11 +120,11 @@ npm run e2e:open
 위의 명령어를 실행하시면 아래와 같이 cypress가 실행되게 됩니다.
 위에서 했던 명령어와 다른점은 테스트시 보이고 보이지 않고의 차이인거 같습니다.
 
-![nuxt_cypress3.png](./images/nuxt_cypress3.png)
+![nuxt_cypress3.png](./images/nuxt_cypress_적용기/nuxt_cypress3.png)
 
 여기서 Run all specs를 누르시면 테스트가 실행되게 됩니다.
 
-![nuxt_cypress4.png](./images/nuxt_cypress4.png)
+![nuxt_cypress4.png](./images/nuxt_cypress_적용기/nuxt_cypress4.png)
 
 실행하시면 시스템상에 설치된 최신 크롬에서 해당 테스트가 실행되게 됩니다.
 

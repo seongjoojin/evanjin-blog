@@ -15,7 +15,7 @@ sentry의 홈페이지를 보시면 아시겠지만 에러를 추적해주는 �
 이런 피드백을 받을때 난감한 점은 유저가 어느때에 정확히 어떤 에러가 난건지 서술 안해줄 때가 있다는 것이다.
 이런 불편함을 sentry로 해결해줄 수 있습니다.
 
-![nuxt_sentry1.png](./images/nuxt_sentry1.png)
+![nuxt_sentry1.png](./images/nuxt_sentry_도입기/nuxt_sentry1.png)
 
 또한 위의 스크린샷을 보시면 아시겠지만 엄청 많은 플랫폼에서 지원을 해주고 있습니다.
 
@@ -51,21 +51,21 @@ sentry: {
 
 먼저 Sentry에 가입해보도록 하겠습니다.
 
-![nuxt_sentry2.png](./images/nuxt_sentry2.png)
+![nuxt_sentry2.png](./images/nuxt_sentry_도입기/nuxt_sentry2.png)
 
 먼저 Sentry 홈페이지에서 Get started를 누르시면 회원가입 화면으로 이동하실 수 있습니다.
 
-![nuxt_sentry3.png](./images/nuxt_sentry3.png)
+![nuxt_sentry3.png](./images/nuxt_sentry_도입기/nuxt_sentry3.png)
 
 다음과 같은 화면을 보실 수 있는데요. 회원가입해주도록 합니다. (가입시 메일로 검증해야하니 가입한 메일을 회원가입하고 확인해주세요.)
 
 회원가입 하시고 로그인하면 다음과 같은 화면을 보실 수 있습니다.
 
-![nuxt_sentry4.png](./images/nuxt_sentry4.png)
+![nuxt_sentry4.png](./images/nuxt_sentry_도입기/nuxt_sentry4.png)
 
 vue를 선택하시고 프로젝트이름을 입력하시고 create project 버튼을 눌러서 프로젝트를 만드시면 dsn 키를 발급해줍니다.
 
-![nuxt_sentry5.png](./images/nuxt_sentry5.png)
+![nuxt_sentry5.png](./images/nuxt_sentry_도입기/nuxt_sentry5.png)
 
 위와 같이 dsn키를 발급되었으면 `nuxt.config.js`에서 넣어줍니다.
 
@@ -78,19 +78,19 @@ sentry: {
 
 바로 위 화면에서 Got it! Take me to the Issue Stream.버튼을 누르시면 아래와 같은 화면을 보실 수 있습니다.
 
-![nuxt_sentry6.png](./images/nuxt_sentry6.png)
+![nuxt_sentry6.png](./images/nuxt_sentry_도입기/nuxt_sentry6.png)
 
 이제 오류가 나면 위와 같은 화면을 보실 수 있습니다.
 
 sample event를 한번 보도록 하겠습니다. (Create a sample event 버튼을 누르면 됩니다.)
 
-![nuxt_sentry7.png](./images/nuxt_sentry7.png)
+![nuxt_sentry7.png](./images/nuxt_sentry_도입기/nuxt_sentry7.png)
 
-![nuxt_sentry8.png](./images/nuxt_sentry8.png)
+![nuxt_sentry8.png](./images/nuxt_sentry_도입기/nuxt_sentry8.png)
 
-![nuxt_sentry9.png](./images/nuxt_sentry9.png)
+![nuxt_sentry9.png](./images/nuxt_sentry_도입기/nuxt_sentry9.png)
 
-![nuxt_sentry10.png](./images/nuxt_sentry10.png)
+![nuxt_sentry10.png](./images/nuxt_sentry_도입기/nuxt_sentry10.png)
 
 정말 많은 내용을 보여줍니다.
 어느 os, 브라우저, 무엇을 클릭했는지, 어느 페이지였는지, 오류 내용 이런 것들을 다 보여줌으로써 디버깅 하기 정말 편하게 해줍니다.

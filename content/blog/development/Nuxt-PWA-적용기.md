@@ -80,9 +80,9 @@ png 형식이고 크기는 512pxX512px이상 이면 됩니다. 이름은 꼭 ico
 
 이제 크롬 개발도구 application탭으로 가시면 저희가 설정한 mainfest가 보이게 됩니다.
 
-![nuxt-pwa1.png](./images/nuxt-pwa1.png)
+![nuxt-pwa1.png](./images/nuxt_pwa_적용기/nuxt-pwa1.png)
 
-![nuxt-pwa2.png](./images/nuxt-pwa2.png)
+![nuxt-pwa2.png](./images/nuxt_pwa_적용기/nuxt-pwa2.png)
 위에서 말씀드린 것처럼 모듈이 64px부터 512px까지 자동으로 설정해줍니다.
 
 ### 3. workbox설정
@@ -138,9 +138,9 @@ start만 바꾸면 됩니다. `HOST=0.0.0.0`은 제 컴퓨터 말고 다른 외�
 아이폰의 경우에는 앱 실행시 보이는 화면이 안 나오고 바로가기 추가하라는 메세지도 안 나옵니다.
 추후에 ios가 더 업데이트 되면 지원되지 않을까 싶습니다.
 
-![nuxt-pwa3.png](./images/nuxt-pwa3.png)
+![nuxt-pwa3.png](./images/nuxt_pwa_적용기/nuxt-pwa3.png)
 
-![nuxt-pwa4.png](./images/nuxt-pwa4.png)
+![nuxt-pwa4.png](./images/nuxt_pwa_적용기/nuxt-pwa4.png)
 
 제 아이폰에서 실행한 모습입니다.
 이상으로 nuxt pwa 적용기를 마치겠습니다.
