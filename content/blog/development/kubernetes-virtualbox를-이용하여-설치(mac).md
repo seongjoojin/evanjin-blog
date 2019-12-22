@@ -26,40 +26,40 @@ http://cdimage.ubuntu.com/ubuntu-server/bionic/daily/current/
 
 ## 3. VM 생성
 
-![kubernets_virtualbox1.png](./images/kubernets_virtualbox1.png)
+![kubernets_virtualbox1.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox1.png)
 
 먼저 virtualbox를 실행해줍니다.
 
 위에서 새로 만들기를 누르면 아래와 같이 vm을 만드는 화면이 나옵니다.
 
-![kubernets_virtualbox2.png](./images/kubernets_virtualbox2.png)
+![kubernets_virtualbox2.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox2.png)
 
 위와 같이 설정해줍니다. 저는 우분투를 사용하려고 위와 같이 설정하였습니다.
 
-![kubernets_virtualbox3.png](./images/kubernets_virtualbox3.png)
+![kubernets_virtualbox3.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox3.png)
 
 메모리는 2048MB로 설정해줍니다.
 
-![kubernets_virtualbox4.png](./images/kubernets_virtualbox4.png)
+![kubernets_virtualbox4.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox4.png)
 
 나머지는 계속을 눌러서 진행해주시고 물리적 하드드라이브에 저장하는 방식을 동적 할당이 아닌 고정크기로만 설정해주시면 됩니다.
 크기는 추천하는 10GB로 설정해줍니다.
 
-![kubernets_virtualbox5.png](./images/kubernets_virtualbox5.png)
+![kubernets_virtualbox5.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox5.png)
 
 생성되면 위와 같이 VM이 하나 생성되었음을 보실 수 있습니다.
 생성된 VM에서 오른쪽 마우스를 누르면 설정을 보실 수 있는데요.
 설정으로 들어가서 필요한 몇가지 설정을 해보도록 하겠습니다.
 
-![kubernets_virtualbox6.png](./images/kubernets_virtualbox6.png)
+![kubernets_virtualbox6.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox6.png)
 
 먼저 시스템 - 프로세서에서 cpu갯수를 2개로 늘려줍니다.
 
-![kubernets_virtualbox7.png](./images/kubernets_virtualbox7.png)
+![kubernets_virtualbox7.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox7.png)
 
 다음으로 저장소에서 광학 드라이브에서 위에서 다운 받았던 우분투 이미지를 선택해줍니다.
 
-![kubernets_virtualbox8.png](./images/kubernets_virtualbox8.png)
+![kubernets_virtualbox8.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox8.png)
 
 마지막으로 네트워크에서 어댑터 1번을 어댑터에 브리지로 선택해줍니다.
 
@@ -244,12 +244,12 @@ EOF
 
 Master에서 오른쪽 마우스 클릭하고 복제를 클릭해줍니다.
 
-![kubernets_virtualbox9.png](./images/kubernets_virtualbox9.png)
+![kubernets_virtualbox9.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox9.png)
 
 클릭하시면 위와 같이 나오게 창이 나오게 됩니다.
 MAC주소 정책을 모든 네트워크 어댑터의 새 MAC 주소 생성으로 선택해주시고 계속을 클릭해주시면 됩니다.
 
-![kubernets_virtualbox10.png](./images/kubernets_virtualbox10.png)
+![kubernets_virtualbox10.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_virtualbox10.png)
 
 복제 방식을 선택하라고 나오게 되는데요 완전한 복제를 해줍니다.
 
@@ -414,6 +414,6 @@ http://192.168.0.10:8443/api/v1/namespaces/kube-system/services/https:kubernetes
 $ sudo kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 ```
 
-![kubernets_dashboard_virtualbox.png](./images/kubernets_dashboard_virtualbox.png)
+![kubernets_dashboard_virtualbox.png](./images/kubernetes_virtualbox를_이용하여_설치/kubernets_dashboard_virtualbox.png)
 
 대시보드에서 노드가 우리가 설정한대로 master노드 하나와 worker노드 두개가 생성되었음을 보실 수 있습니다.

@@ -183,7 +183,7 @@ up
 
 만약 배포가 문제없이 되었다면 커맨드 라인에 endpoint에 나오는 url로 가시면 배포되어 있는 애플리케이션을 보실 수 있습니다.
 
-![nuxtjs-with-lambda](./images/nuxtjs-with-lambda.png)
+![nuxtjs-with-lambda](./images/aws_lambda에_nuxt_배포하기/nuxtjs-with-lambda.png)
 
 이상입니다.
 

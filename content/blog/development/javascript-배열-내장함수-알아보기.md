@@ -18,7 +18,7 @@ array.forEach(item => {
 
 위의 console은 아래와 같이 출력되게 됩니다.
 
-![forEach1.png](./images/forEach1.png)
+![forEach1.png](./images/javascript_배열_내장함수_알아보기/forEach1.png)
 
 forEach의 매개변수에는 현재 요소뿐만 아니라 index, array(호출한 배열)도 있습니다.
 
@@ -34,7 +34,7 @@ array.forEach((item, index, array) => {
 
 위의 console은 아래와 같이 출력되게 됩니다.
 
-![forEach2.png](./images/forEach2.png)
+![forEach2.png](./images/javascript_배열_내장함수_알아보기/forEach2.png)
 
 ## 2. map
 
@@ -49,7 +49,7 @@ console.log(mapArray)
 
 위의 console은 아래와 같이 출력되게 됩니다.
 
-![map1.png](./images/map1.png)
+![map1.png](./images/javascript_배열_내장함수_알아보기/map1.png)
 
 map의 매개변수도 forEach와 동일하게 index와 array가 존재합니다.
 
@@ -64,7 +64,7 @@ const mapArray = array.map((item, index, arr) => {
 
 위의 console은 아래와 같이 출력되게 됩니다.
 
-![map2.png](./images/map2.png)
+![map2.png](./images/javascript_배열_내장함수_알아보기/map2.png)
 
 ## 3. indexOf
 
@@ -78,7 +78,7 @@ console.log(array.indexOf(144))
 console.log(array.indexOf(10))
 ```
 
-![indexOf.png](./images/indexOf.png)
+![indexOf.png](./images/javascript_배열_내장함수_알아보기/indexOf.png)
 
 ## 4. findIndex
 
@@ -120,7 +120,7 @@ const findIndex = todos.findIndex(item => item.title === '수박 사자')
 console.log(findIndex)
 ```
 
-![findIndex.png](./images/findIndex.png)
+![findIndex.png](./images/javascript_배열_내장함수_알아보기/findIndex.png)
 
 ## 5. find
 
@@ -162,7 +162,7 @@ const find = todos.find(item => item.title === '수박 사자')
 console.log(find)
 ```
 
-![find.png](./images/find.png)
+![find.png](./images/javascript_배열_내장함수_알아보기/find.png)
 
 ## 6. filter
 
@@ -204,7 +204,7 @@ const filterItem = todos.filter(item => item.completed)
 console.log(filterItem)
 ```
 
-![filter.png](./images/filter.png)
+![filter.png](./images/javascript_배열_내장함수_알아보기/filter.png)
 
 ## 7. splice
 
@@ -216,7 +216,7 @@ numbers.splice(0, 4)
 console.log(numbers)
 ```
 
-![splice.png](./images/splice.png)
+![splice.png](./images/javascript_배열_내장함수_알아보기/splice.png)
 
 ## 8. slice
 
@@ -228,7 +228,7 @@ numbers.slice(0, 4)
 console.log(numbers)
 ```
 
-![slice.png](./images/slice.png)
+![slice.png](./images/javascript_배열_내장함수_알아보기/slice.png)
 
 ## 9. shift
 
@@ -241,7 +241,7 @@ console.log(value)
 console.log(numbers)
 ```
 
-![shift.png](./images/shift.png)
+![shift.png](./images/javascript_배열_내장함수_알아보기/shift.png)
 
 ## 10. pop
 
@@ -254,7 +254,7 @@ console.log(value)
 console.log(numbers)
 ```
 
-![pop.png](./images/pop.png)
+![pop.png](./images/javascript_배열_내장함수_알아보기/pop.png)
 
 ## 11. push
 
@@ -268,7 +268,7 @@ numbers.push(1)
 console.log(numbers)
 ```
 
-![push.png](./images/push.png)
+![push.png](./images/javascript_배열_내장함수_알아보기/push.png)
 
 ## 12. unshift
 
@@ -280,7 +280,7 @@ numbers.unshift(15)
 console.log(numbers)
 ```
 
-![unshift.png](./images/unshift.png)
+![unshift.png](./images/javascript_배열_내장함수_알아보기/unshift.png)
 
 ## 13. concat
 
@@ -294,7 +294,7 @@ const concatArray = array1.concat(array2)
 console.log(concatArray)
 ```
 
-![concat.png](./images/concat.png)
+![concat.png](./images/javascript_배열_내장함수_알아보기/concat.png)
 
 ## 14. join
 
@@ -306,7 +306,7 @@ console.log(array.join())
 console.log(array.join(''))
 ```
 
-![join.png](./images/join.png)
+![join.png](./images/javascript_배열_내장함수_알아보기/join.png)
 
 ## 15. includes
 
@@ -318,7 +318,7 @@ console.log(array.includes(11))
 console.log(array.includes(150))
 ```
 
-![includes.png](./images/includes.png)
+![includes.png](./images/javascript_배열_내장함수_알아보기/includes.png)
 
 ## 16. reverse
 
@@ -329,7 +329,7 @@ const array = [121, 144, 19, 161, 19, 144, 19, 11]
 console.log(array.reverse())
 ```
 
-![reverse.png](./images/reverse.png)
+![reverse.png](./images/javascript_배열_내장함수_알아보기/reverse.png)
 
 ## 17. sort
 
@@ -353,7 +353,7 @@ const months = [
 months.sort()
 ```
 
-![sort.png](./images/sort.png)
+![sort.png](./images/javascript_배열_내장함수_알아보기/sort.png)
 
 ## 18. reduce
 
@@ -365,7 +365,7 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue
 console.log(array.reduce(reducer))
 ```
 
-![reduce.png](./images/reduce.png)
+![reduce.png](./images/javascript_배열_내장함수_알아보기/reduce.png)
 
 ## 19. length
 
@@ -376,4 +376,4 @@ const array = [121, 144, 19, 161, 19, 144, 19, 11]
 console.log(array.length)
 ```
 
-![length.png](./images/length.png)
+![length.png](./images/javascript_배열_내장함수_알아보기/length.png)
