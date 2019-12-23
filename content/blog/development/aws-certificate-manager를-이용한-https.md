@@ -25,6 +25,7 @@ AWS Certificate Manager에서 위에서 구매한 도메인 연결하여 사용�
 ![aws-certificate-manager를-이용한-https1.png](./images/aws-certificate-manager를-이용한-https/aws-certificate-manager를-이용한-https1.png)
 
 먼저 공인인증서 요청을 눌러서 진행해줍니다.
+공인인증서로 하는 경우 AWS 자체 서비스에서만 사용가능합니다.
 
 ![aws-certificate-manager를-이용한-https2.png](./images/aws-certificate-manager를-이용한-https/aws-certificate-manager를-이용한-https2.png)
 
