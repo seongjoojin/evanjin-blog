@@ -230,3 +230,75 @@ $ az aks get-credentials --resource-group jintube-resource --name jintubeaksclus
 ```shell
 $ kubectl get nodes
 ```
+
+## 5. 어플리케이션 실행
+
+어플리케이션을 생성한 Kubernetes 클러스터에 배포해보도록 하겠습니다.
+
+먼저 yaml파일로 Deployment와 Service를 정의해줍니다.
+
+```yaml
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: jintube-app
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: jintube-app
+    spec:
+      nodeSelector:
+        'beta.kubernetes.io/os': linux
+      containers:
+        - name: jintube
+          image: jintubearc.azurecr.io/jintube:v1
+          resources: {}
+          env:
+            - name: PORT
+              value: '4000'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jintube-app
+  name: jintube-app-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 4000
+  selector:
+    app: jintube-app
+```
+
+위에는 예시입니다.
+각자의 어플리케이션 마다 다르게 설정해주셔야 합니다.
+
+`kubectl apply` 명령어로 배포하여줍니다.
+
+```shell
+$ kubectl apply -f [파일 이름].yaml
+
+# 예시
+$ kubectl apply -f jintube.yaml
+```
+
+제대로 배포되었는지 아래의 명령어로 확인해봅니다.
+
+```shell
+$ kubectl get service [서비스 이름] --watch
+
+# 예시
+$ kubectl get service jintube-app-service --watch
+```
+
+위의 명령어를 실행하고 EXTERNAL-IP가 나오면 해당 ip로 접속시 어플리케이션이 작동함을 확인하시면 됩니다.
