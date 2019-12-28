@@ -26,13 +26,13 @@ jquery를 이용한 1년동안의 퍼블리셔 경험을 살려 현재는 프론
 
 ---
 
-**_Experienced_**
+**Experienced**
 
 React, Vue.js, JavaScript, Node.js, jQuery, MongoDB, Express.js, React Hooks, Typescript, Docker, AWS Lambda, AWS elastic beanstalk, AWS S3, Next.js, Nuxt.js, Golang, Redux, Mobx, Vuex, Github, Gitlab, Heroku
 
 **Interested**
 
-Java Spring boot, Kubernetes, Redux Saga
+Django, Kubernetes, Redux Saga, Ruby on Rails
 
 ## Projects
 
