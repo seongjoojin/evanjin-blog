@@ -2,6 +2,7 @@
 title: gatsby-starter-bee로 변경한 이야기
 date: 2019-09-22 12:09:19
 category: development
+draft: false
 ---
 
 ### gatsby-starter-bee로 넘어간 이유

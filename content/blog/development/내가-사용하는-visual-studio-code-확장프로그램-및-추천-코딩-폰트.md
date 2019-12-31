@@ -2,6 +2,7 @@
 title: 내가 사용하는 Visual Studio Code 확장프로그램 및 추천 코딩 폰트
 date: 2019-09-22 14:09:29
 category: development
+draft: false
 ---
 
 ## Visual Studio Code 추천 확장프로그램

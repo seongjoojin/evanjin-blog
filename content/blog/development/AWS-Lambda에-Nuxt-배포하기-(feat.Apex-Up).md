@@ -2,6 +2,7 @@
 title: AWS Lambda에 Nuxt 배포하기 (feat.Apex Up)
 date: 2019-03-24 00:12:03
 category: development
+draft: false
 ---
 
 해당 예제는 [Apex Up](https://up.docs.apex.sh/)을 사용하여서 aws lambda에 배포합니다.

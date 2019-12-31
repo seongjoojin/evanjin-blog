@@ -2,6 +2,7 @@
 title: kubernetes virtualbox를 이용하여 설치(mac)
 date: 2019-12-16 09:12:62
 category: development
+draft: false
 ---
 
 ## 0. 구성

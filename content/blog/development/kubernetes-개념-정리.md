@@ -2,6 +2,7 @@
 title: kubernetes 개념 정리
 date: 2019-12-14 17:12:05
 category: development
+draft: false
 ---
 
 ### Pods

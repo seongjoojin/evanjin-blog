@@ -2,6 +2,7 @@
 title: Nuxt PWA 적용기
 date: 2019-03-24 01:41:03
 category: development
+draft: false
 ---
 
 ### 0. PWA란

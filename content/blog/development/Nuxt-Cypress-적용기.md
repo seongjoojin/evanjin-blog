@@ -2,6 +2,7 @@
 title: Nuxt Cypress 적용기
 date: 2019-03-24 02:11:03
 category: development
+draft: false
 ---
 
 ### 0. cypress란

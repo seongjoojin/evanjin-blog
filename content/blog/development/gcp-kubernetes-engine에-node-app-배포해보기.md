@@ -2,6 +2,7 @@
 title: GCP kubernetes engine에 Node App 배포해보기
 date: 2019-12-22 23:12:99
 category: development
+draft: false
 ---
 
 ## 0. Intro

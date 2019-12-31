@@ -2,6 +2,7 @@
 title: AWS Certificate Manager를 이용한 HTTPS
 date: 2019-12-23 17:12:84
 category: development
+draft: false
 ---
 
 ## 0. 도메인 구입

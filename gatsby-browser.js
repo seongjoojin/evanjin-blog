@@ -7,7 +7,6 @@ require('intersection-observer')
 
 const metaConfig = require('./gatsby-meta-config')
 
-/*
 exports.onInitialClientRender = () => {
   if (metaConfig.share.facebookAppId) {
     window.fbAsyncInit = function() {
@@ -31,4 +30,3 @@ exports.onInitialClientRender = () => {
     })(document, 'script', 'facebook-jssdk')
   }
 }
-*/

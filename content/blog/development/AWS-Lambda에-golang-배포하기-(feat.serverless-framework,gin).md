@@ -2,6 +2,7 @@
 title: AWS Lambda에 golang 배포하기 (feat.serverless framework,gin)
 date: 2019-04-07 18:00:03
 category: development
+draft: false
 ---
 
 해당 예제는 [Serverless Framework](https://serverless.com/)을 사용하여서 aws lambda에 배포합니다.

@@ -2,6 +2,7 @@
 title: Nuxt Sentry 도입기
 date: 2019-03-24 02:01:03
 category: development
+draft: false
 ---
 
 ### 0. Sentry은 무엇인가

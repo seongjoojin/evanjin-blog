@@ -2,6 +2,7 @@
 title: 도구 설치(kubernetes task)
 date: 2019-12-12 17:02:03
 category: development
+draft: false
 ---
 
 ## 0. Intro
