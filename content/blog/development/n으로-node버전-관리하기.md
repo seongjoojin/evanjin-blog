@@ -2,6 +2,7 @@
 title: n으로 node버전 관리하기
 date: 2019-05-06 09:40:03
 category: development
+draft: false
 ---
 
 ## 1. n 설차하기

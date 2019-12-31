@@ -2,6 +2,7 @@
 title: k8s 기초
 date: 2019-12-17 10:12:21
 category: development
+draft: false
 ---
 
 본 내용은 eks workshop의 내용을 정리한 것입니다.

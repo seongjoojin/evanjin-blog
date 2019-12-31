@@ -2,6 +2,7 @@
 title: fishshell 사용기
 date: 2019-05-06 14:40:03
 category: development
+draft: false
 ---
 
 ## 0. 왜 fishshell을 사용하였는가

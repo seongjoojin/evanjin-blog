@@ -36,16 +36,12 @@ export default ({ data, location }) => {
   const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category))
 
   useEffect(() => {
-    window.addEventListener(`scroll`, onScroll, {
-      passive: false,
-    })
+    window.addEventListener(`scroll`, onScroll, { passive: false })
     IOManager.init()
     ScrollManager.init()
 
     return () => {
-      window.removeEventListener(`scroll`, onScroll, {
-        passive: false,
-      })
+      window.removeEventListener(`scroll`, onScroll, { passive: false })
       IOManager.destroy()
       ScrollManager.destroy()
     }
@@ -77,18 +73,19 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteMetadata.title}>
-      <Head title={HOME_TITLE} keywords={siteMetadata.keywords} /> <Bio />
+      <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
+      <Bio />
       <Category
         categories={categories}
         category={category}
         selectCategory={selectCategory}
-      />{' '}
+      />
       <Contents
         posts={posts}
         countOfInitialPost={countOfInitialPost}
         count={count}
         category={category}
-      />{' '}
+      />
     </Layout>
   )
 }
@@ -105,7 +102,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { category: { ne: null } } }
+      filter: { frontmatter: { category: { ne: null }, draft: { eq: false } } }
     ) {
       edges {
         node {
@@ -117,6 +114,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             category
+            draft
           }
         }
       }

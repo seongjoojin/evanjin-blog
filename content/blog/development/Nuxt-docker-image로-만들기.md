@@ -2,6 +2,7 @@
 title: Nuxt docker image로 만들기
 date: 2019-03-24 01:31:03
 category: development
+draft: false
 ---
 
 이번에는 nuxt를 도커 이미지를 만들어서 다음 프로젝트에서 사용하는 기본 뼈대가 되거나 aws 등의 클라우드에 도커 이미지를 올리는 등에 쓰일 수 있도록 이미지를 만들어 보도록 하겠습니다.

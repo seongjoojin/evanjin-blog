@@ -2,6 +2,7 @@
 title: Azure Kubernetes Service에 Node app 배포해보기
 date: 2019-12-24 16:12:62
 category: development
+draft: false
 ---
 
 ## 1. Azure Kubernetes Service(AKS) 란

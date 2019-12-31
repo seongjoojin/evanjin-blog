@@ -2,6 +2,7 @@
 title: Vue 개발 시 참고사항
 date: 2019-05-04 23:01:03
 category: development
+draft: false
 ---
 
 ## 0. app의 특징에 따른 Vue 플러그인 조합
