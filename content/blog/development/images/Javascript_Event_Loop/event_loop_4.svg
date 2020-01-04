@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 783 826" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:50;">
+    <g id="Background" transform="matrix(0.16258,0,0,0.16258,-30.2729,-224.409)">
+        <use xlink:href="#_Image1" x="147.423" y="836.568" width="482px" height="514px" transform="matrix(6.17949,0,0,6.11905,0,0)"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-49,-14)">
+        <rect x="94" y="87" width="238" height="238" style="fill:none;stroke:rgb(255,11,0);stroke-width:3px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-46,-1)">
+        <text x="151.747px" y="43.768px" style="font-family:'NanumGothic', sans-serif;font-size:24px;">Call Stack</text>
+    </g>
+    <g transform="matrix(1,0,0,1,385,-18)">
+        <rect x="94" y="87" width="238" height="238" style="fill:none;stroke:rgb(10,255,0);stroke-width:3px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,388,-5)">
+        <text x="151.747px" y="43.768px" style="font-family:'NanumGothic', sans-serif;font-size:24px;">W<tspan x="175.339px 188.419px " y="43.768px 43.768px ">eb</tspan> API</text>
+    </g>
+    <g transform="matrix(1,0,0,1,385,447)">
+        <rect x="94" y="87" width="238" height="238" style="fill:none;stroke:rgb(0,45,255);stroke-width:3px;"/>
+    </g>
+    <g transform="matrix(1,0,0,1,360,460)">
+        <text x="151.747px" y="43.768px" style="font-family:'NanumGothic', sans-serif;font-size:24px;">Callback Queue</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-54,529)">
+        <text x="151.747px" y="43.768px" style="font-family:'NanumGothic', sans-serif;font-size:24px;">Event Loop</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-31,-2)">
+        <path d="M345,192.575L345,182.425L446.5,182.425L446.5,173L461,187.5L446.5,202L446.5,192.575L345,192.575Z"/>
+    </g>
+    <g transform="matrix(6.245e-17,1,-1,6.245e-17,783.5,-7.5)">
+        <path d="M345,192.575L345,182.425L446.5,182.425L446.5,173L461,187.5L446.5,202L446.5,192.575L345,192.575Z"/>
+    </g>
+    <g transform="matrix(6.00146e-17,-1,1,6.00146e-17,-21.5,815.5)">
+        <path d="M345,192.575L345,182.425L446.5,182.425L446.5,173L461,187.5L446.5,202L446.5,192.575L345,192.575Z"/>
+    </g>
+    <g transform="matrix(-1,1.249e-16,-1.249e-16,-1,753,834)">
+        <path d="M345,192.575L345,182.425L446.5,182.425L446.5,173L461,187.5L446.5,202L446.5,192.575L345,192.575Z"/>
+    </g>
+    <g transform="matrix(1,0,0,1,432,-1)">
+        <g transform="matrix(1,0,0,1.76471,-3,-226.882)">
+            <rect x="60" y="247" width="215" height="51" style="fill:none;stroke:rgb(0,255,230);stroke-width:2.09px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-21,27)">
+            <text x="85.334px" y="204.826px" style="font-family:'NanumPen', 'Nanum Pen Script', cursive;font-size:18px;">setTimeout(() =&gt; {</text>
+            <text x="105.494px" y="234.826px" style="font-family:'NanumPen', 'Nanum Pen Script', cursive;font-size:18px;">return console.log(&apos;World!&apos;)</text>
+            <text x="95.414px" y="264.826px" style="font-family:'NanumPen', 'Nanum Pen Script', cursive;font-size:18px;">}, 1000)</text>
+        </g>
+    </g>
+    <defs>
+        <image id="_Image1" width="78px" height="84px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAABUCAYAAAAs5wHgAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEEklEQVR4nO2dS08UQRCAvxVcoygPPRgVPWoIP0Jj1F9iiMGDxl/ATQ/EH+HFux74AYqcTND4OPlI8IEaUHENyms9DMvOLrMz09NV3TPYX9JsWLarq2qrq3u6pwcoBxPALNDMKLPApCcdvXMT2CLbSSblllMLHDKHrKPSypwLg2qKsuvAX0X5eTgArGkI3qcgc5Tom/ftNIh0aBLpJIpkxA0BPwTlaTAErEgIknJcU0iOK0ztPgosx9+w7apXqJ7TINL5fM7PNYGl7dd+icY30B8htctmin3TPeoAxbtqFaMsjSQ/9LKxBsW66l5zGuy2KdNGE8cN5xFYYZrAIHAnz4fzdtUqTDVcUdv5kUE/sK6rSwcbQIP2jL8OHEZoRBMg97igOaq9M1EkRh34pKxbrwI5lNbIaYvACWGZDWBAWGYvMkdVaac92G5U2mkQdeUa8FxBthH3kQttldWJDNS7ahI1wUaGLB1gw9kUvVRynFQX1Vzry8sosCAsswa7h/hpAcHLwDEBOUVYAY74aNg2jF+4V3mHzRS9VHPcqqXAp0IOKIoLpyXmOJvc1sBTF4khlZuz6JjHvbUU5ttpAN98NCra5z0yg8Mcd9lCyIS46TJM4sBxHyWElBSNSTDQvkooQhkmuHmR3BzfGRyeCQksM2tEBtsEyi4OYR6udanGPfISgfS013KbCVNY2N5nUFHjfpMyMEbBoBnPUemkru6lIG1ZLW0Dm5WECouampaY1t1OezFFBQKBQCAQCAQCgUAgEAgIEl9CKcMhNh98YfeyWur5r7TDt1Xa0SrKKbIXcseTKuZZNh7T1d0bJlsHfd2VTTYsplTNcI/Tna4m8FrTGkfUMbd7QOo2ryrvfhWxe17KcXEOAn+EZLmgkN0aUdK6s/OcgmxpigbLh24hGuV6QeW0sbkV7GJckJbjWmVG3HQ7bGwRE5S3fBU1vTg2NrwBuZunTfB9FWJ7YK7w0fIqM4+d01aT3nTRVVNvWlHmVYpexrnN5anjX0Rn3n2wRPTQFRtux3/RzHGn6ZrveELKro7crJnjFvC7mjKInNNS/aSZ21yzbqlvvNzLakx7YHBx7Puhgt6J+JjH/SY6Qy/JInBcWCakzDl9zOMGaH+bn4meKmjKPuB9TI5Tp3X/0UcuSqIMD2zZv61HT8roON8MAz+zPpS3q07jb/LqklxOg/wR9z9EptHiQ56I6xboe3VDA2Obshx3N6UhnxfsUmwhEAj9mM/4LyTUqUq5ZOSdLpK8PQJ8N5RTtbxnHWVJXdXUaS1FyvAkiCxGEMrRklcODSKlNGbxtpwh0k3scZWaI6TrR0QmUdfSQfNadYP2Ofgniu10Mxtr1/cXJ8oNZP8Rxhbl3fRW5xrwmGwnPQKuetKxg39eoyrtSgZBLQAAAABJRU5ErkJggg=="/>
+    </defs>
+</svg>

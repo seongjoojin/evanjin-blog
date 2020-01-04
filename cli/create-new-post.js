@@ -22,24 +22,24 @@ const getCategories = async () => {
 
   return _.uniq(
     markdownFiles
-    .map(file => fs.readFileSync(file, UTF_8))
-    .map(str => matter(str).data.category)
-    .filter(val => !!val)
-    .map(str => str.trim().toLowerCase())
+      .map(file => fs.readFileSync(file, UTF_8))
+      .map(str => matter(str).data.category)
+      .filter(val => !!val)
+      .map(str => str.trim().toLowerCase())
   )
 }
 
 const getFileName = title =>
   title
-  .split(' ')
-  .join('-')
-  .toLowerCase()
+    .split(' ')
+    .join('-')
+    .toLowerCase()
 
 const refineContents = rawContents =>
   matter
-  .stringify('', rawContents)
-  .split("'")
-  .join('')
+    .stringify('', rawContents)
+    .split("'")
+    .join('')
 
 const fetchCategory = async () => {
   let category
@@ -50,34 +50,34 @@ const fetchCategory = async () => {
     new inquirer.Separator(),
     customCategoryOption,
   ]
-  const {
-    selectedCategory
-  } = await inquirer.prompt([{
-    type: 'list',
-    name: 'selectedCategory',
-    message: 'Select a category',
-    choices: categoryChoices,
-  }, ])
+  const { selectedCategory } = await inquirer.prompt([
+    {
+      type: 'list',
+      name: 'selectedCategory',
+      message: 'Select a category',
+      choices: categoryChoices,
+    },
+  ])
 
   if (selectedCategory === customCategoryOption) {
-    const {
-      customizedCategory
-    } = await inquirer.prompt([{
-      type: 'input',
-      name: 'customizedCategory',
-      message: 'Enter the customized category',
-      validate: val => {
-        if (val.includes("'")) {
-          return 'Cannot use single quote'
-        }
+    const { customizedCategory } = await inquirer.prompt([
+      {
+        type: 'input',
+        name: 'customizedCategory',
+        message: 'Enter the customized category',
+        validate: val => {
+          if (val.includes("'")) {
+            return 'Cannot use single quote'
+          }
 
-        if (categories.includes(val)) {
-          return `Already exist category name:: ${val}`
-        }
+          if (categories.includes(val)) {
+            return `Already exist category name:: ${val}`
+          }
 
-        return true
+          return true
+        },
       },
-    }, ])
+    ])
     category = customizedCategory
   } else {
     category = selectedCategory
@@ -91,34 +91,34 @@ const fetchCategory = async () => {
 }
 
 const fetchTitle = async category => {
-  const {
-    title
-  } = await inquirer.prompt([{
-    type: 'input',
-    name: 'title',
-    message: 'Enter the title',
-    default: () => 'New post title',
-    validate: async val => {
-      if (val.includes("'")) {
-        return 'Cannot use single quote'
-      }
+  const { title } = await inquirer.prompt([
+    {
+      type: 'input',
+      name: 'title',
+      message: 'Enter the title',
+      default: () => 'New post title',
+      validate: async val => {
+        if (val.includes("'")) {
+          return 'Cannot use single quote'
+        }
 
-      const fileName = getFileName(val)
-      const dest = `${TARGET_DIR}/${category}/${fileName}.md`
-      const destFileExists = await fs.pathExists(dest)
+        const fileName = getFileName(val)
+        const dest = `${TARGET_DIR}/${category}/${fileName}.md`
+        const destFileExists = await fs.pathExists(dest)
 
-      if (destFileExists) {
-        return `Already exist file name:: ${fileName}.md`
-      }
+        if (destFileExists) {
+          return `Already exist file name:: ${fileName}.md`
+        }
 
-      return true
+        return true
+      },
     },
-  }, ])
+  ])
 
   return title
 }
 
-module.exports = (async function () {
+module.exports = (async function() {
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
   log.info('Create new post:: ', date)
@@ -134,11 +134,7 @@ module.exports = (async function () {
 
   const title = await fetchTitle(category)
   const fileName = getFileName(title)
-  const contents = refineContents({
-    title,
-    date,
-    category
-  })
+  const contents = refineContents({ title, date, category, draft: false })
 
   fs.writeFile(`${destDir}/${fileName}.md`, contents, err => {
     if (err) {
