@@ -239,7 +239,7 @@ $ kubectl get nodes
 먼저 yaml파일로 Deployment와 Service를 정의해줍니다.
 
 ```yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jintube-app
