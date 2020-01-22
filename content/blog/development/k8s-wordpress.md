@@ -10,6 +10,19 @@ draft: false
 - os: mac os
 - kubernetes version: 1.17
 
+##### 0. kubectl, minikube 설치
+
+```bash
+# kubectl 설치
+$ brew install kubectl
+
+# minikube 설치
+$ brew cask install minikube
+
+# minikube ip 확인
+$ minikube ip
+```
+
 ##### 1. secret 생성
 
 ```bash
@@ -193,31 +206,6 @@ spec:
     requests:
       storage: 2Gi
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: myapp
-spec:
-  selector:
-    matchLabels:
-      app: myapp
-  template:
-    metadata:
-      labels:
-        app: myapp
-    spec:
-      containers:
-      - name: myapp
-        image: <Image>
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: <Port>
-
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
