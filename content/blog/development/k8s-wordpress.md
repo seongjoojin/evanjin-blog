@@ -120,6 +120,9 @@ Usage:
 Use "kubectl <command> --help" for more information about a given command.
 Use "kubectl options" for a list of global command-line options (applies to all commands).
 
+$ minikube addons enable ingress
+✅  ingress was successfully enabled
+
 $ echo -n test-password > ./password.txt
 
 $ kubectl create secret generic mysql-pass --from-file=./password.txt
