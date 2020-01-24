@@ -77,7 +77,6 @@ $ minikube kubectl port-forward $PROMETHEUS_POD_NAME 9090
 
 ```bash
 $ helm install grafana stable/grafana
- helm install grafana stable/grafana
 NAME: grafana
 LAST DEPLOYED: Thu Jan 23 11:04:55 2020
 NAMESPACE: default
