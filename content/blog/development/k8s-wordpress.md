@@ -263,7 +263,7 @@ mysql-78b898485-qmg74   1/1     Running   0          59s
 ```
 
 ```bash
-kubectl exec -it mysql-78b898485-qmg74 -- bash
+$ kubectl exec -it mysql-78b898485-qmg74 -- bash
 root@mysql-78b898485-qmg74:/# mysql -uroot -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
