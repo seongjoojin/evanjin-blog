@@ -2,7 +2,7 @@
 title: window10에서 wsl2로 docker와 kubernetes 설치 해보기
 date: 2020-01-24 10:01:03
 category: development
-draft: true
+draft: false
 ---
 
 ### 0. wsl2 설치
