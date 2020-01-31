@@ -8,7 +8,7 @@
     "url": "https://github.com/JaeYeopHan/gatsby-starter-bee/issues"
   },
   "dependencies": {
-    "@babel/node": "^7.8.3",
+    "@babel/node": "^7.8.4",
     "gatsby": "^2.19.10",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed": "^2.3.26",
