@@ -40,17 +40,15 @@ node_modeuls
 ```Dockerfile
 FROM node:lts
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-
 WORKDIR /usr/app
 COPY package*.json ./
 
-RUN yarn
+RUN npm i
 COPY . .
 
 EXPOSE 8888
 
-CMD ["yarn","dev"]
+CMD ["npm","run","dev"]
 ```
 
 혹시나 Dockerfile의 구성에 대해서 모르실 분들(미래의 나)을 위해서 위의 내용을 하나하나 살펴보도록 하겠습니다.
@@ -58,16 +56,13 @@ CMD ["yarn","dev"]
 `FROM node:lts`
 도커 허브라는 도커의 공개 레파지토리에서 node의 lts 버전의 이미지를 받아옵니다
 
-`RUN curl -o- -L https://yarnpkg.com/install.sh | bash`
-yarn을 사용하기 위해서 yarn을 설치해줍니다.
-
 `WORKDIR /usr/app`
 WORKDIR는 RUN, CMD 등의 명령이 실행될 디렉토리를 정해주는 설정입니다. 저는 `/usr/app`으로 설정하였습니다.
 
 `COPY package*.json ./`
 라이브러리 설치를 위해 package.json 등을 복사합니다.
-`RUN yarn`
-yarn을 실행하여 라이브러리들을 설치합니다.
+`RUN npm i`
+npm을 실행하여 라이브러리들을 설치합니다.
 
 `COPY . .`
 이제 모든 폴더와 파일을 복사합니다.
@@ -76,8 +71,8 @@ yarn을 실행하여 라이브러리들을 설치합니다.
 EXPOSE는 특정 포트를 열어줄때 사용하는 설정입니다. (포트포워드와 비슷하다고 보시면 됩니다.)
 저 같은 경우는 8888포트를 사용하고 있어서 해당 포트를 열어주는 것으로 설정하였습니다.
 
-`CMD ["yarn","dev"]`
-CMD는 명칭 그대로 명령어를 실행해주면 저 같은 경우는 `yarn dev`가 실행되도록 설정해주었습니다.
+`CMD ["npm","run","dev"]`
+CMD는 명칭 그대로 명령어를 실행해주면 저 같은 경우는 `npm run dev`가 실행되도록 설정해주었습니다.
 
 이외에는 많은 설정들이 존재하는데요.
 그 부분은 공식문서를 통해서 확인해주시면 됩니다.
@@ -201,6 +196,15 @@ docker-compose에서 환경변수를 정해주는 방법이 제가 아는 한도
 environment에서 직접 정해주거나 .env 파일 등으로 설정해주는 것입니다.
 만약 보안 등에 치명적인 이미지라면 env_file 설정을 쓰는 것이 좋을거 같고
 아니라면 environment에 직접 지정해주어도 문제는 없을 것으로 생각 됩니다.
+
+```yaml
+volumes:
+  - ./src:/usr/app/src
+```
+
+api에서 volumes를 위와 같이 정의한 것은 src안의 파일 내용을 변경시(소스 코드를 변경시)
+nodemon 등으로 핫로딩하여 바로 결과를 볼 수 있도록 설정한 것이고
+좀더 자세히 설명하자면 Docekrfile에서 정한 WORKDIR이 현재 폴더의 src를 가르키도록 설정한 것입니다.
 
 ```yaml
 command:
