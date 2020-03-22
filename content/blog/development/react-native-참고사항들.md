@@ -245,8 +245,8 @@ AOS 및 apns(IOS) 추가 설정하기
 "message":{
         "token" : "bk3RNwTe3H0:CI2k_HHwgIpoDKCIZvvDMExUdFQ3P1...",
          "notification":{
-               "title" : "스토리잼",
-               "body" : "스토리잼에 오신걸 환영합니다.",
+               "title" : "안녕하세요",
+               "body" : "안녕하세요",
                 "image" :  "https://blabla.com/image.png"
         }
         "android":  {
