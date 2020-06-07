@@ -1,13 +1,14 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+
+import { Helmet } from 'react-helmet'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 export function Head({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
-      render={data => {
+      render={(data) => {
         const metaDescription =
           description || data.site.siteMetadata.description
         return (
