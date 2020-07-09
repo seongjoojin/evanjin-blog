@@ -2,7 +2,7 @@
 title: react native 0.63.0 변화된 점
 date: 2020-07-09 22:07:38
 category: development
-draft: false
+draft: true
 ---
 
 한국 시간으로 새벽 3시쯤 react native의 0.63.0 버전이 릴리즈 되었습니다.
