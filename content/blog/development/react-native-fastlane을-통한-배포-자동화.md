@@ -1,5 +1,5 @@
 ---
-title: react native faselane을 통한 배포 자동화
+title: react native fastlane을 통한 배포 자동화
 date: 2020-10-17 16:10:09
 category: development
 draft: false
