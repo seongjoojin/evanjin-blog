@@ -28,17 +28,26 @@ jQuery를 이용한 1년동안의 퍼블리셔 경험을 살려 현재는 프론
 
 **Experienced**
 
-React, Next.js, Vue.js, JavaScript, jQuery, Typescript ,Redux, Github
+React Native, React, Next.js, Vue.js, Nuxt.js, jQuery, Typescript ,Redux, Redux-saga, Github
 
 **Interested**
 
-Docker, AWS, Kubernetes, Vuex, Nuxt.js, MongoDB, Express.js, Node.js
+Docker, AWS, Nest.js, SWR
 
 ## Projects
 
-2019.09 —
+2020.02 - 현재
 
-현재
+**만화가족 —** 앱(React Native)개발자 — [storyjam.co.kr/](https://www.storyjam.co.kr/)
+
+- 만화 서비스를 제공하는 회사입니다.
+- React Native를 통하여서 앱 서비스를 개발 및 유지보수하고 있습니다.
+
+- Tech Stack: React Native, React Hooks, Redux, Redux Saga, Typescript, Styled component
+
+---
+
+2019.09 — 2020.02
 
 **넥스클라우드 —** Software Engineer — [github.com/NexClipper/nex-dashboard](https://github.com/NexClipper/nex-dashboard)
 
@@ -46,17 +55,6 @@ Docker, AWS, Kubernetes, Vuex, Nuxt.js, MongoDB, Express.js, Node.js
 - 서비스에 대한 이해도를 높이기 위해서 쿠버네티스를 공부하고 기존 대시보드를 개선하였습니다.
 
 - Tech Stack: React, React Hooks, Redux, Styled component, HighChart, Express.js, Node.js, Typescript, Ant Design, Github
-
----
-
-2019.11 — 2019.12
-
-**Jintube** — Full Stack Developer — [github.com/seongjoojin/jintube](https://github.com/seongjoojin/jintube)
-
-- 유튜브 클론 프로젝트입니다.
-- 영상 녹화, 업로드, 회원가입, 소셜 로그인 등 기능을 개발하였습니다.
-
-- Tech Stack: Node.js, Express.js, MongoDB, Mongoose, Pug, AWS S3, Heroku, Webpack, oAuth (Github, Facebook)
 
 ---
 
