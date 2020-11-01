@@ -7,9 +7,8 @@ import './index.scss'
 export const Bio = () => (
   <StaticQuery
     query={bioQuery}
-    render={data => {
+    render={(data) => {
       const { author, social, introduction } = data.site.siteMetadata
-
       return (
         <div className="bio">
           <div className="author">
