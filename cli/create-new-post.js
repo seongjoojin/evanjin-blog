@@ -1,7 +1,7 @@
 const path = require('path')
 const fs = require('fs-extra')
 const dateFns = require('date-fns')
-const _ = require('lodash')
+const uniq = require('lodash/uniq')
 const rr = require('recursive-readdir')
 const matter = require('gray-matter')
 const inquirer = require('inquirer')
@@ -20,26 +20,19 @@ const ignoreFunc = (file, stats) =>
 const getCategories = async () => {
   const markdownFiles = await rr(TARGET_DIR, [ignoreFunc])
 
-  return _.uniq(
+  return uniq(
     markdownFiles
-      .map(file => fs.readFileSync(file, UTF_8))
-      .map(str => matter(str).data.category)
-      .filter(val => !!val)
-      .map(str => str.trim().toLowerCase())
+      .map((file) => fs.readFileSync(file, UTF_8))
+      .map((str) => matter(str).data.category)
+      .filter((val) => !!val)
+      .map((str) => str.trim().toLowerCase())
   )
 }
 
-const getFileName = title =>
-  title
-    .split(' ')
-    .join('-')
-    .toLowerCase()
+const getFileName = (title) => title.split(' ').join('-').toLowerCase()
 
-const refineContents = rawContents =>
-  matter
-    .stringify('', rawContents)
-    .split("'")
-    .join('')
+const refineContents = (rawContents) =>
+  matter.stringify('', rawContents).split("'").join('')
 
 const fetchCategory = async () => {
   let category
@@ -65,7 +58,7 @@ const fetchCategory = async () => {
         type: 'input',
         name: 'customizedCategory',
         message: 'Enter the customized category',
-        validate: val => {
+        validate: (val) => {
           if (val.includes("'")) {
             return 'Cannot use single quote'
           }
@@ -90,14 +83,14 @@ const fetchCategory = async () => {
   return category
 }
 
-const fetchTitle = async category => {
+const fetchTitle = async (category) => {
   const { title } = await inquirer.prompt([
     {
       type: 'input',
       name: 'title',
       message: 'Enter the title',
       default: () => 'New post title',
-      validate: async val => {
+      validate: async (val) => {
         if (val.includes("'")) {
           return 'Cannot use single quote'
         }
@@ -118,7 +111,7 @@ const fetchTitle = async category => {
   return title
 }
 
-module.exports = (async function() {
+module.exports = (async function () {
   const date = dateFns.format(new Date(), DATE_FORMAT)
 
   log.info('Create new post:: ', date)
@@ -136,7 +129,7 @@ module.exports = (async function() {
   const fileName = getFileName(title)
   const contents = refineContents({ title, date, category, draft: false })
 
-  fs.writeFile(`${destDir}/${fileName}.md`, contents, err => {
+  fs.writeFile(`${destDir}/${fileName}.md`, contents, (err) => {
     if (err) {
       log.error('Unknown Error: Cannot write file!')
       return

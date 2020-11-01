@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql } from 'gatsby'
-import _ from 'lodash'
+import uniq from 'lodash/uniq'
 
 import { Layout } from '../layout'
 import { Bio } from '../components/bio'
@@ -33,7 +33,7 @@ export default ({ data, location }) => {
   const { siteMetadata } = data.site
   const { countOfInitialPost } = siteMetadata.configs
   const posts = data.allMarkdownRemark.edges
-  const categories = _.uniq(posts.map(({ node }) => node.frontmatter.category))
+  const categories = uniq(posts.map(({ node }) => node.frontmatter.category))
 
   useEffect(() => {
     window.addEventListener(`scroll`, onScroll, { passive: false })
@@ -54,7 +54,7 @@ export default ({ data, location }) => {
     Storage.setCategory(category)
   })
 
-  const selectCategory = category => {
+  const selectCategory = (category) => {
     setCategory(category)
     ScrollManager.go(DEST_POS)
   }
@@ -65,7 +65,7 @@ export default ({ data, location }) => {
     const doesNeedMore = () =>
       posts.length > countRef.current * countOfInitialPost
 
-    return EventManager.toFit(() => setCount(prev => prev + 1), {
+    return EventManager.toFit(() => setCount((prev) => prev + 1), {
       dismissCondition: () => !isTriggerPos(),
       triggerCondition: () => isTriggerPos() && doesNeedMore(),
     })()
