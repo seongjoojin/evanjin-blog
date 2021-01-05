@@ -172,7 +172,7 @@ https://github.com/joshrlesch/fastlane-plugin-yarn
 제가 만든 앱의 경우 `package.json`에 넣은 `scripts`를 통해서 배포환경 변수를 컨트롤 하는 부분이 있기 때문에
 그것을 배포하기전에 한 번 설정해줄 수 있도록 해당 플러그인을 사용하였습니다.
 
-다음으로 increment_version_code plugin입니다.
+다음으로 `increment_version_code plugin`입니다.
 https://github.com/Jems22/fastlane-plugin-increment_version_code
 
 fastlane에서 ios는 빌드버전을 올려주는 것이 들어가 있으나 안드로이드에서는 없지만 위의 플러그인으로 해줄 수 있습니다.
@@ -184,6 +184,6 @@ fastlane에서 ios는 빌드버전을 올려주는 것이 들어가 있으나 �
 먼저 fastlane의 존재를 알게해주신 dev yakuza께 감사를 먼저드립니다.
 
 fastlane 이전에는 개발자들이 yarn으로 환경변수 세팅 후 xcode 이나 안드로이드 스튜디오를 실행 후 스키마나 그래들 환경 변수 설정 후 빌드를 일일히 해주었는데
-fastlane을 설정 후 명령어 하나로 자동으로 TestFlight, deploygate에 업로드 되거나 앱번들이 생성되는 것 등이 자동화 됨으로써 개발자의 실수를 줄이고 시간을 단축하게 되었습니다. (안드로이드 배포의 경우 3-4분정도로 엄청나게 단축하데 되었습니다.)
+fastlane을 설정 후 명령어 하나로 자동으로 TestFlight, deploygate에 업로드 되거나 앱번들이 생성되는 것 등이 자동화 됨으로써 개발자의 실수를 줄이고 시간을 단축하게 되었습니다. (안드로이드 배포의 경우 3-4분정도로 엄청나게 단축하게 되었습니다.)
 
 감사합니다.
