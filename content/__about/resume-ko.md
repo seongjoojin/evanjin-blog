@@ -8,9 +8,9 @@ lang: 'ko'
 
 ### _Frontend Web Developer_
 
-- Github: [seongjoojin](https://github.com/seongjoojin)
-- Blog: [evanjin.dev](https://evanjin.dev/)
-- Email: evanjin8@gmail.com
+- Github:[seongjoojin](https://github.com/seongjoojin)
+- Blog:[https://evanjin-blog.now.sh/](https://evanjin-blog.now.sh/)
+- Email:evanjin8@gmail.com
 
 ## Summary
 
