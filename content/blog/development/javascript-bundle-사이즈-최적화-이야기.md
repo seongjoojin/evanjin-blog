@@ -31,7 +31,7 @@ module.exports = {
       openAnalyzer: false,
     },
   },
-};
+}
 ```
 
 ### ant-design-vue 라이브러리
@@ -44,8 +44,8 @@ https://2x.antdv.com/docs/vue/introduce/
 Manually import를 하였습니다.
 
 ```ts
-import DatePicker from "ant-design-vue/es/date-picker"
-import "ant-design-vue/es/date-picker/style/css";
+import DatePicker from 'ant-design-vue/es/date-picker'
+import 'ant-design-vue/es/date-picker/style/css'
 ```
 
 공식문서에서는 lib안에 있는 것을 사용하라고 하지만 es안에 있는 것이 사이즈가 더 작아서 es안에 있는 것을 사용하게 되었고 위와 같이 적용할 경우에도 커스텀 스타일이 제대로 작동되지 않는 면들이 있어서
@@ -59,7 +59,7 @@ import "ant-design-vue/es/date-picker/style/css";
 해당 라이브러리로 import되는 것을 아래와 같이 ant-design-vue처럼 해줄 수 있지만 번거롭기도 하고 일일히 해주기에는 노가다로 보여서 사용하게 되었습니다. (ant-design-vue에선 되지 않아서 해당 라이브러리를 적용하진 않았습니다.)
 
 ```ts
-import CheckCircleOutlined from '@ant-design/icons-vue/lib/icons/CheckCircleOutlined';
+import CheckCircleOutlined from '@ant-design/icons-vue/lib/icons/CheckCircleOutlined'
 ```
 
 만약 메뉴얼 대로 하시고 싶으시면 위과 같이 하시면 됩니다.
@@ -79,7 +79,7 @@ module.exports = {
       },
     ],
   ],
-};
+}
 ```
 
 ### moment 라이브러리
@@ -91,17 +91,74 @@ ant-design-vue에 moment 라이브러리가 사용되기 때문에 시간에 대
 `babel.config.js`에서 아래와 같이 설정해주면 `moment`에서 locale이 제외되게 됩니다.
 
 ```js
-const webpack = require('webpack');
+const webpack = require('webpack')
 module.exports = {
-	configureWebpack: {
-		plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
-	},
-};
+  configureWebpack: {
+    plugins: [new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
+  },
+}
 ```
+
+아니면 [moment-locales-webpack-plugin](https://github.com/iamakulov/moment-locales-webpack-plugin)을 이용하는 것도 방법입니다.
+
+추가적으로 [moment-timezone-data-webpack-plugin](https://github.com/gilmoreorless/moment-timezone-data-webpack-plugin)을 이용해 timezone도 제거하는 방법도 있습니다.
+
+사용법 (vue.config.js)
+
+```js
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
+const MomentTimezoneDataPlugin = require('moment-timezone-data-webpack-plugin')
+
+module.exports = {
+  configureWebpack: {
+    plugins: [
+      new MomentLocalesPlugin({
+        localesToKeep: ['es-us', 'ko'],
+      }),
+      new MomentTimezoneDataPlugin({
+        matchZones: 'Asia/Seoul',
+      }),
+    ],
+  },
+}
+```
+
+### lodash 라이브러리
+
+회사코드에서는 사용하지 않았지만 라이브러리에 lodash가 디펜더시로 있기 때문에 최적화할 방법이 필요했습니다.
+
+webpack alias로 lodash-es, lodash를 같이 묶도록 하였고 [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash), [lodash-webpack-plugin](https://github.com/lodash/lodash-webpack-plugin) 라이브러리를 사용하였습니다.
+
+babel.config.js
+
+```js
+module.exports = {
+  plugins: ['lodash'],
+}
+```
+
+vue.config.js
+
+```js
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
+
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'lodash-es': 'lodash',
+      },
+    },
+  },
+  plugins: [new LodashModuleReplacementPlugin()],
+}
+```
+
+webpack의 alias기능은 라이브러리에서 디펜던시 중인 lodash에 관련된 것들을 줄일 수 있습니다.
 
 ## 그래서 번들 사이즈 얼마나 줄였을까?
 
-입사 후에 Webpack Bundle Analyze를 통해서 처음 번들 사이즈를 보았을 때 10mb 정도의 크기를 가지고 있었고 위의 세가지 방법을 통해서 3mb까지 줄이게 되었습니다.
+입사 후에 Webpack Bundle Analyze를 통해서 처음 번들 사이즈를 보았을 때 10mb 정도의 크기를 가지고 있었고 위의 세가지 방법을 통해서 2.8mb까지 줄이게 되었습니다.
 
 ## 참고할만한 것들
 
@@ -109,3 +166,5 @@ https://ui.toast.com/weekly-pick/ko_20190603
 https://github.com/lodash/lodash-webpack-plugin
 https://bundlephobia.com/
 http://webpack.github.io/analyse/
+https://github.com/GoogleChromeLabs/webpack-libs-optimizations
+https://toss.im/slash-21/sessions/3-2
